@@ -2,4 +2,141 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    border: .1px dotted green;
+}
+
+.header-div {
+    position: fixed;
+    height: 75px;
+    background-color: #C62828;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .logo-div {
+        width: 70%;
+    }
+
+    .logo-div h1 {
+        padding-left: 20px;
+        font-size: 2rem;
+    }
+
+    nav {
+        width: 30%;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul li {
+        list-style: none;
+    }
+
+    nav a {
+        height: 100%;
+        padding: 25px 20px;
+        font-size: 1.5rem;
+    }
+
+    nav a:hover {
+        color: white;
+        background-color: #455A64;
+        cursor: pointer;
+    }
+
+.about-me {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        #616161,
+        #424242
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+    h2 {
+        font-size: 3rem;
+        color: whitesmoke;
+    }
+
+    .about-me p {
+        font-size: 2rem;
+        color: #C62828;
+    }
+
+    .buds {
+        width: 250px;
+        height: 250px;
+    }
+
+.my-projects {
+    height: 100vh;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+    .my-projects h3 {
+        font-size: 2rem;
+        color: #424242;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+.my-contacts {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        #1565C0,
+        #0D47A1
+    );
+}
+
+    .my-contacts h3 {
+        font-size: 2rem;
+        color: whitesmoke;
+        padding: 25px 0;
+        text-align: center;
+    }
+
+
+@media only screen and (max-width: 480px) {
+    nav {
+        visibility: hidden;
+    }
+
+    h1 {
+        font-size:  1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .about-me p {
+        font-size: 1rem;
+        color: blue;
+    }
+    
+}
+@media only screen and (min-width: 481px) {
+    
+}
+@media only screen and (min-width: 1024px) {
+    
 }
