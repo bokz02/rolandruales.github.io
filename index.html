@@ -8,30 +8,52 @@
     <title>My Portfolio</title>
 </head>
 <body>
-    <section class="about-me sec" id="sec">
+    <section class="about-me sec" id="about">
         <div class="header-div" id="nav-bar">
             <div class="logo-div">
                 <h1>RR</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a id="me">About Me</a></li>
-                    <li><a>Projects</a></li>
-                    <li><a>Contact</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <img class="my-image" src="https://drive.google.com/uc?export=view&amp;id=1BJRh0jwHd1Mk6gpW73sacJR3tHAmM-6m"/>
+        <img class="my-image" src="https://drive.google.com/uc?export=view&amp;id=1BJRh0jwHd1Mk6gpW73sacJR3tHAmM-6m" alt="my picture"/>
         <h2>Hey I'm Roland
         </h2>
         <p>aspiring web and android developer</p>
     </section>
-    <section class="my-projects sec" id="sec">
+    <section class="my-projects sec" id="projects">
         <h3>My Projects</h3>
 
     </section>
-    <section class="my-contacts sec" id="sec">
+    <section class="my-contacts sec" id="contact">
         <h3>Let's work together...</h3>
+        <ul>
+            <li>
+                <a href="https://www.facebook.com/bbokz">
+                    <img src="https://drive.google.com/uc?export=view&amp;id=1x-tX2wMVa8YT4d0tR2UP4ai-N6nZUQUG" alt="facebook">
+                    <p>Facebook</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://github.com/rolandruales">
+                    <img src="https://drive.google.com/uc?export=view&amp;id=1xpmuGOhqngdZyoF50IiVi8ovqcLGIJ7p" alt="facebook">
+                    <p>Github</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.linkedin.com/in/roland-ruales/">
+                    <img src="https://drive.google.com/uc?export=view&amp;id=1YmX0fxLPmhhIHMFmKbpnqIlqGBilHL3a" alt="facebook">
+                    <p>LinkedIn</p>
+                </a>
+            </li>
+        </ul>
     </section>
 
     <div class="loader" id="loader-div">
@@ -48,12 +70,16 @@
     <script>
 
 
-        var views = document.getElementsByTagName("section");
-            for(var i = 0; i < views.length; i++) {
-            views[i].style.visibility = "hidden";
-            }
+        // var views = document.getElementsByTagName("section");
+        //     for(var i = 0; i < views.length; i++) {
+        //     views[i].style.visibility = "hidden";
+        //     }
 
+        function hideNav(){
+            document.getElementById("nav-bar").style.top = "-100px";
+        }
 
+        document.getElementById("loader-div").style.visibility = "hidden";
         window.addEventListener("load", function(){
             var prevScrollpos = window.pageYOffset;
             window.onscroll = function() {
@@ -63,25 +89,27 @@
             if (prevScrollpos > currentScrollPos) {
                 document.getElementById("nav-bar").style.top ="0"
             } else {
-                document.getElementById("nav-bar").style.top = "-60px";
+                document.getElementById("nav-bar").style.top = "-100px";
             }
             prevScrollpos = currentScrollPos;
             }
 
-            var timeleft = 3;
-            var downloadTimer = setInterval(function(){
-            if(timeleft <= 0){
-                clearInterval(downloadTimer);
-                document.getElementById("loader-div").style.visibility = "hidden";
-                var views = document.getElementsByTagName("section");
-                for(var i = 0; i < views.length; i++) {
-                views[i].style.visibility = "visible";
-                }
-            } else {
-                document.getElementById("loader-div").style.visibility = "visible"; 
-            }
-            timeleft -= 1;
-            }, 1000);
+            
+
+            // var timeleft = 3;
+            // var downloadTimer = setInterval(function(){
+            // if(timeleft <= 0){
+            //     clearInterval(downloadTimer);
+            //     document.getElementById("loader-div").style.visibility = "hidden";
+            //     var views = document.getElementsByTagName("section");
+            //     for(var i = 0; i < views.length; i++) {
+            //     views[i].style.visibility = "visible";
+            //     }
+            // } else {
+            //     document.getElementById("loader-div").style.visibility = "visible"; 
+            // }
+            // timeleft -= 1;
+            // }, 1000);
             
 
             

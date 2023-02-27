@@ -2,17 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 .header-div {
     position: fixed;
     height: 75px;
-
-    background: linear-gradient(
-        0deg,
-        transparent 10%,
-        #424242 90%
-    );
+    background-color: #546E7A;
     top: 0;
     width: 100%;
     display: flex;
@@ -54,16 +50,13 @@
         font-family: 'Raleway', sans-serif;
         font-weight: 500;
         color: #EEEEEE;
+        text-decoration: none;
     }
 
     nav a:hover {
         color: whitesmoke;
         cursor: pointer;
-        background: linear-gradient(
-        0deg,
-        transparent 10%,
-        #26A69A 90%
-    );
+        background-color: #26A69A;
     }
 
 .about-me {
@@ -125,6 +118,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
     .my-contacts h3 {
@@ -132,6 +126,40 @@
         color: whitesmoke;
         padding: 25px 0;
         text-align: center;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .my-contacts ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .my-contacts li {
+        list-style: none;
+        margin: 0 10px;
+    }
+
+    .my-contacts a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform .1s;
+    }
+
+    .my-contacts a:hover {
+        transform: scale(1.2);
+    }
+
+    .my-contacts ul li a img {
+        width: 50px;
+        height: auto;
+    }
+
+    .my-contacts li p {
+        color: whitesmoke;
+        font-size: 1.5rem;
         font-family: 'Raleway', sans-serif;
     }
 
@@ -300,8 +328,17 @@
         font-size: 1rem;
     }
 
-    .about-me p {
+    .about-me p, .my-contacts p {
         font-size: 1rem;
+    }
+
+    .my-contacts ul {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .my-contacts ul li {
+        margin: 10px 0;
     }
     
 }
