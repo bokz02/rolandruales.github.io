@@ -2,18 +2,23 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: .1px dotted green;
 }
 
 .header-div {
     position: fixed;
     height: 75px;
-    background-color: #C62828;
+
+    background: linear-gradient(
+        0deg,
+        transparent 10%,
+        #424242 90%
+    );
     top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: top 0.3s;
 }
 
     .logo-div {
@@ -21,12 +26,15 @@
     }
 
     .logo-div h1 {
-        padding-left: 20px;
+        padding-left: 40px;
         font-size: 2rem;
+        font-family: 'Raleway', sans-serif;
+        color: #EEEEEE;
     }
 
     nav {
         width: 30%;
+
     }
 
     nav ul {
@@ -43,12 +51,19 @@
         height: 100%;
         padding: 25px 20px;
         font-size: 1.5rem;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        color: #EEEEEE;
     }
 
     nav a:hover {
-        color: white;
-        background-color: #455A64;
+        color: whitesmoke;
         cursor: pointer;
+        background: linear-gradient(
+        0deg,
+        transparent 10%,
+        #26A69A 90%
+    );
     }
 
 .about-me {
@@ -56,7 +71,7 @@
     width: 100%;
     background: linear-gradient(
         90deg,
-        #616161,
+        #757575,
         #424242
     );
     display: flex;
@@ -68,16 +83,21 @@
     h2 {
         font-size: 3rem;
         color: whitesmoke;
+        font-family: 'Raleway', sans-serif;
+        padding: 15px 0;
     }
 
     .about-me p {
-        font-size: 2rem;
-        color: #C62828;
+        font-size: 1.5rem;
+        color: #26A69A;
+        font-family: 'Raleway', sans-serif;
+        font-style: italic;
     }
 
-    .buds {
-        width: 250px;
-        height: 250px;
+    .my-image {
+        width: 350px;
+        height: auto;
+        border-radius: 5px;
     }
 
 .my-projects {
@@ -87,10 +107,11 @@
 }
 
     .my-projects h3 {
-        font-size: 2rem;
+        font-size: 3rem;
         color: #424242;
         padding: 25px 0;
         text-align: center;
+        font-family: 'Raleway', sans-serif;
     }
 
 .my-contacts {
@@ -101,14 +122,165 @@
         #1565C0,
         #0D47A1
     );
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
     .my-contacts h3 {
-        font-size: 2rem;
+        font-size: 3rem;
         color: whitesmoke;
         padding: 25px 0;
         text-align: center;
+        font-family: 'Raleway', sans-serif;
     }
+
+    @keyframes square-animation {
+ 0% {
+  left: 0;
+  top: 0;
+ }
+
+ 10.5% {
+  left: 0;
+  top: 0;
+ }
+
+ 12.5% {
+  left: 32px;
+  top: 0;
+ }
+
+ 23% {
+  left: 32px;
+  top: 0;
+ }
+
+ 25% {
+  left: 64px;
+  top: 0;
+ }
+
+ 35.5% {
+  left: 64px;
+  top: 0;
+ }
+
+ 37.5% {
+  left: 64px;
+  top: 32px;
+ }
+
+ 48% {
+  left: 64px;
+  top: 32px;
+ }
+
+ 50% {
+  left: 32px;
+  top: 32px;
+ }
+
+ 60.5% {
+  left: 32px;
+  top: 32px;
+ }
+
+ 62.5% {
+  left: 32px;
+  top: 64px;
+ }
+
+ 73% {
+  left: 32px;
+  top: 64px;
+ }
+
+ 75% {
+  left: 0;
+  top: 64px;
+ }
+
+ 85.5% {
+  left: 0;
+  top: 64px;
+ }
+
+ 87.5% {
+  left: 0;
+  top: 32px;
+ }
+
+ 98% {
+  left: 0;
+  top: 32px;
+ }
+
+ 100% {
+  left: 0;
+  top: 0;
+ }
+}
+
+.loader {
+    position: fixed;
+    width: 96px;
+    height: 96px;
+    transform: rotate(45deg);
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.loader-square {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 28px;
+ height: 28px;
+ margin: 2px;
+ border-radius: 0px;
+ background: #26A69A;
+ background-size: cover;
+ background-position: center;
+ background-attachment: fixed;
+ animation: square-animation 10s ease-in-out infinite both;
+}
+
+.loader-square:nth-of-type(0) {
+ animation-delay: 0s;
+}
+
+.loader-square:nth-of-type(1) {
+ animation-delay: -1.4285714286s;
+}
+
+.loader-square:nth-of-type(2) {
+ animation-delay: -2.8571428571s;
+}
+
+.loader-square:nth-of-type(3) {
+ animation-delay: -4.2857142857s;
+}
+
+.loader-square:nth-of-type(4) {
+ animation-delay: -5.7142857143s;
+}
+
+.loader-square:nth-of-type(5) {
+ animation-delay: -7.1428571429s;
+}
+
+.loader-square:nth-of-type(6) {
+ animation-delay: -8.5714285714s;
+}
+
+.loader-square:nth-of-type(7) {
+ animation-delay: -10s;
+}
 
 
 @media only screen and (max-width: 480px) {
@@ -130,7 +302,6 @@
 
     .about-me p {
         font-size: 1rem;
-        color: blue;
     }
     
 }

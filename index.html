@@ -8,30 +8,93 @@
     <title>My Portfolio</title>
 </head>
 <body>
-    <section class="about-me">
-        <div class="header-div">
+    <section class="about-me sec" id="sec">
+        <div class="header-div" id="nav-bar">
             <div class="logo-div">
                 <h1>RR</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a>About Me</a></li>
+                    <li><a id="me">About Me</a></li>
                     <li><a>Projects</a></li>
                     <li><a>Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <img src="https://drive.google.com/uc?export=view&amp;id=1J_kUzzSIhFsqmYkQvYJIHyRiX6slhuil" class="buds"/>
-        <h2>Hi, I am Roland Ruales
+        <img class="my-image" src="https://drive.google.com/uc?export=view&amp;id=1BJRh0jwHd1Mk6gpW73sacJR3tHAmM-6m"/>
+        <h2>Hey I'm Roland
         </h2>
-        <p>Junior web and android developer</p>
+        <p>aspiring web and android developer</p>
     </section>
-    <section class="my-projects">
+    <section class="my-projects sec" id="sec">
         <h3>My Projects</h3>
 
     </section>
-    <section class="my-contacts">
+    <section class="my-contacts sec" id="sec">
         <h3>Let's work together...</h3>
     </section>
+
+    <div class="loader" id="loader-div">
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+        <div class="loader-square"></div>
+    </div>
+
+
+    <script>
+
+
+        var views = document.getElementsByTagName("section");
+            for(var i = 0; i < views.length; i++) {
+            views[i].style.visibility = "hidden";
+            }
+
+
+        window.addEventListener("load", function(){
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+
+        
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("nav-bar").style.top ="0"
+            } else {
+                document.getElementById("nav-bar").style.top = "-60px";
+            }
+            prevScrollpos = currentScrollPos;
+            }
+
+            var timeleft = 3;
+            var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+                document.getElementById("loader-div").style.visibility = "hidden";
+                var views = document.getElementsByTagName("section");
+                for(var i = 0; i < views.length; i++) {
+                views[i].style.visibility = "visible";
+                }
+            } else {
+                document.getElementById("loader-div").style.visibility = "visible"; 
+            }
+            timeleft -= 1;
+            }, 1000);
+            
+
+            
+
+        });
+        
+    
+
+    
+
+        
+
+
+    </script>
 </body>
 </html> 
