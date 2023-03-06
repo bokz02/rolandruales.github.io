@@ -210,7 +210,6 @@
     }
 
     .logos-wrapper ul li {
-        border: 1px dotted red;
         list-style: none;
         display: flex;
         align-items: center;
