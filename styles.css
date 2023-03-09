@@ -23,7 +23,7 @@ body, h2, .header-div, ul, h1 {
 }
 
     .logo-div {
-        width: 65%;
+        width: 100%;
     }
 
     .logo-div h1 {
@@ -35,7 +35,7 @@ body, h2, .header-div, ul, h1 {
     }
 
     nav {
-        width: 35%;
+        width: 100%;
     }
 
     nav ul {
@@ -153,18 +153,11 @@ body, h2, .header-div, ul, h1 {
 
     .image-div {
         position: relative;
-        width: 25%;
-        height: 100%;     
+        width: 30%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: bottom, center;
     }
-
-        .my-image {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: auto;
-            height: 80%;
-            border-radius: 5px;
-        }
 
 .about-me {
     height: 100vh;
@@ -175,12 +168,13 @@ body, h2, .header-div, ul, h1 {
     align-items: center;
 }
 
-    .about-wrapper {
+    .about-wrapper, .technologies-wrapper {
         height: 100vh;
         width: 50%;
         display: flex;
         align-items: center;
         flex-direction: column;
+        justify-content: center;
     }
 
     .about-wrapper p {
@@ -191,13 +185,14 @@ body, h2, .header-div, ul, h1 {
         font-size: 1rem;
     }
 
-    .about-wrapper h3 {
+    .about-wrapper h3, .technologies-wrapper h3 {
         font-size: 2.5rem;
-        padding: 55px 0;
+        padding: 30px 0;
         font-family: 'Raleway', sans-serif;
         color: white;
-        font-weight: 00;
+        font-weight: 600;
     }
+
 
     .about-me ul {
         list-style: circle;
@@ -212,8 +207,9 @@ body, h2, .header-div, ul, h1 {
 
     .logos-wrapper {
         background-color: white;
-        padding-right: 20px;
+        padding: 0 30px 30px 0;
         border-radius: 5px;
+        width: max-content;
     }
 
     .logos-wrapper ul {
@@ -227,8 +223,8 @@ body, h2, .header-div, ul, h1 {
         display: flex;
         align-items: center;
         flex-direction: column;
-        margin: 10px;
-        width: 80px;
+        margin: 2%;
+        width: 100px;
         color: #212121;
     }
 
@@ -243,21 +239,15 @@ body, h2, .header-div, ul, h1 {
         color: #424242;
         padding: 55px 0;
         text-align: center;
+        font-weight: 600;
         font-family: 'Raleway', sans-serif;
     }
 
     .carousel-inner > .carousel-item > a {
         display: block;
-        width:100%;
-        height:550px;
-        margin: 0 auto;
-    }
-
-    .carousel-inner > .carousel-item > a > img {
-        width:100%;
+        width: 100%;
         height: 550px;
-        min-width: 900px;
-        border-radius: 5px;
+        margin: 0 auto;
     }
 
     .carousel {
@@ -268,10 +258,19 @@ body, h2, .header-div, ul, h1 {
         min-width: 900px;
     }
 
-    h5, .carousel p {
+    .carousel h5, .carousel p {
         background-color: rgba(0, 0, 0, .5);
         padding: 5px 0;
     }
+
+    .fill {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+    }
+
 
 
 .my-contacts {
@@ -290,6 +289,7 @@ body, h2, .header-div, ul, h1 {
 
     .my-contacts h3 {
         font-size: 3rem;
+        font-weight: 600;
         color: whitesmoke;
         padding: 25px 0;
         text-align: center;
@@ -328,6 +328,7 @@ body, h2, .header-div, ul, h1 {
         color: whitesmoke;
         font-size: 1.5rem;
         font-family: 'Raleway', sans-serif;
+        margin: auto 0;
     }
 
     @keyframes square-animation {
@@ -479,62 +480,300 @@ body, h2, .header-div, ul, h1 {
 
 
 @media only screen and (max-width: 480px) {
-    nav {
-        visibility: hidden;
+
+    * {
+        padding: 0;
+        margin: 0;
     }
+
+    body {
+        margin: 0px;
+    }
+
+    .header-div {
+        width: 100%;
+        justify-content: left;
+    }
+
+    nav {
+        display: none;
+    }
+
 
     h1 {
         font-size:  1rem;
     }
 
-    h2 {
-        font-size: 1rem;
+    .home {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    h3 {
-        font-size: 1rem;
+        .name {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+    h2 {
+        font-size: 2rem;
     }
 
     .home p, .my-contacts p {
         font-size: 1rem;
     }
 
-    .my-contacts ul {
-        flex-direction: column;
-        align-items: start;
+        .image-div {
+            margin-top: 20px;
+            height: 50%;
+            min-width: 80%;
+            background-size: contain;
+        }
+
+    
+    .about-me {
+        display: block;
+        height: max-content;
+        padding: 20px 20px;
     }
 
-    .my-contacts ul li {
-        margin: 10px 0;
+        .about-me h3 {
+            font-size: 2rem;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .about-wrapper {
+            width: 100%;
+            height: max-content;
+            margin-bottom: 30px;
+        }
+
+        .about-me p {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .technologies-wrapper {
+            width: 100%;
+            height: max-content;
+            padding-bottom: 20px;
+        }
+
+        .technologies-wrapper h3 {
+            font-size: 2rem;
+            padding: 20px 0;
+            margin: 0;
+            color: #F5F5F5;
+        }
+
+        .logos-wrapper {
+            background-color: white;
+            padding-right: 25px;
+            border-radius: 5px;
+            width: 90%;
+            padding-bottom: 10px;
+        }
+    
+        .logos-wrapper ul {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+    
+        .logos-wrapper ul li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 5px;
+            width: 80px;
+            color: #212121;
+        }
+
+    .carousel {
+        border-radius: 5px;
+        width: 100%;
+        margin: 0 auto;
+        min-width: 0;
     }
+
+        .carousel h5, .carousel p {
+            background-color: rgba(0, 0, 0, .5);
+            padding: 5px 0;
+        }
+
+        .carousel-inner > .carousel-item > a {
+            display: block;
+            width:100%;
+            margin: 0 auto;
+            min-width: none;
+        }
+
+        .fill {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: #212121;
+        }
+
+    .my-contacts h3 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+        .my-contacts ul {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .my-contacts ul li {
+            margin: 10px 0;
+        }
+
+        .my-contacts p {
+            margin: auto 0;
+        }
     
 }
-@media only screen and (min-width: 481px) {
 
-    nav a {
-        padding: 25px 15px;
-        color: green;
+
+@media only screen and (max-width: 768px) {
+
+    .home {
+        justify-content: space-evenly;
     }
 
-    nav {
-        min-width: max-content;
-        width: 35%;
+    .my-contacts h3 {
+        font-size: 2rem;
+        font-weight: 600;
     }
 
-    
+        .my-contacts ul {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .my-contacts ul li {
+            margin: 10px 0;
+        }
+
+        .my-contacts p {
+            margin: auto 0;
+        }
+
 }
-@media only screen and (min-width: 1024px) {
 
 
+@media only screen and (max-width: 1023px) {
+   
 
     nav a {
-        padding: 25px 15px;
-        color: #212121;
+        font-size: .8rem;
     }
 
-    nav {
-        min-width: max-content;
-        width: 35%;
+    .image-div {
+        width: 40%;
     }
+
+    .about-me {
+        display: block;
+        height: max-content;
+        padding: 20px 20px;
+    }
+
+        .about-me h3 {
+            font-size: 2rem;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .about-wrapper {
+            width: 100%;
+            height: max-content;
+            margin-bottom: 30px;
+        }
+
+        .about-me p {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .technologies-wrapper {
+            width: 100%;
+            height: max-content;
+            padding-bottom: 20px;
+        }
+
+        .technologies-wrapper h3 {
+            font-size: 2rem;
+            padding: 20px 0;
+            margin: 0;
+            color: #F5F5F5;
+        }
+
+        .logos-wrapper {
+            background-color: white;
+            padding-right: 25px;
+            border-radius: 5px;
+            width: max-content;
+            padding-bottom: 10px;
+        }
     
+        .logos-wrapper ul {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+        }
+    
+        .logos-wrapper ul li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 5px;
+            width: 80px;
+            color: #212121;
+        }
+
+    .carousel {
+        border-radius: 5px;
+        width: 100%;
+        margin: 0 auto;
+        min-width: 0;
+    }
+
+        .carousel h5, .carousel p {
+            background-color: rgba(0, 0, 0, .5);
+            padding: 5px 0;
+        }
+
+        .carousel-inner > .carousel-item > a {
+            display: block;
+            width:100%;
+            margin: 0 auto;
+            min-width: none;
+        }
+
+        .fill {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: #212121;
+        }
 }
