@@ -484,7 +484,6 @@ body, h2, .header-div, ul, h1 {
     * {
         padding: 0;
         margin: 0;
-        border: 1px dotted red;
     }
 
     body {
@@ -576,10 +575,14 @@ body, h2, .header-div, ul, h1 {
         }
 
         .logos-wrapper {
+            position: relative;
             background-color: white;
-            border-radius: 5px;
-            width: max-content;
-            padding-bottom: 10px;
+            border-radius: 10px;
+            width: 80%;
+            max-height: max-content;
+            padding: 0 0 0 10px;
+            overflow: hidden;
+
         }
     
         .logos-wrapper ul {
@@ -587,6 +590,8 @@ body, h2, .header-div, ul, h1 {
             align-items: center;
             flex-direction: row;
             justify-content: center;
+            margin: 10px 0;
+            padding: 0 0 0 10px;
         }
     
         .logos-wrapper ul li {
@@ -594,9 +599,13 @@ body, h2, .header-div, ul, h1 {
             display: flex;
             align-items: center;
             flex-direction: column;
-            width: 75px;
             color: #212121;
             font-size: .8rem;
+        }
+
+        .logos-wrapper img {
+            width: 35px;
+            height: auto;
         }
 
     .carousel {
@@ -744,7 +753,7 @@ body, h2, .header-div, ul, h1 {
             display: flex;
             align-items: center;
             flex-direction: column;
-            margin: 5px;
+            margin: 2%;
             width: 80px;
             color: #212121;
         }

@@ -156,10 +156,10 @@
 
     <script>
 
-        // var views = document.getElementsByTagName("section");
-        //     for(var i = 0; i < views.length; i++) {
-        //     views[i].style.visibility = "hidden";
-        //     }
+        var views = document.getElementsByTagName("section");
+            for(var i = 0; i < views.length; i++) {
+            views[i].style.visibility = "hidden";
+            }
 
         function hideNav(){
             document.getElementById("nav-bar").style.top = "-100px";
@@ -181,20 +181,20 @@
             }
 
         
-            // var timeleft = 3;
-            // var downloadTimer = setInterval(function(){
-            // if(timeleft <= 0){
-            //     clearInterval(downloadTimer);
-            //     document.getElementById("loader-div").style.visibility = "hidden";
-            //     var views = document.getElementsByTagName("section");
-            //     for(var i = 0; i < views.length; i++) {
-            //     views[i].style.visibility = "visible";
-            //     }
-            // } else {
-            //     document.getElementById("loader-div").style.visibility = "visible"; 
-            // }
-            // timeleft -= 1;
-            // }, 1000);
+            var timeleft = 3;
+            var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
+                document.getElementById("loader-div").style.visibility = "hidden";
+                var views = document.getElementsByTagName("section");
+                for(var i = 0; i < views.length; i++) {
+                views[i].style.visibility = "visible";
+                }
+            } else {
+                document.getElementById("loader-div").style.visibility = "visible"; 
+            }
+            timeleft -= 1;
+            }, 1000);
         
         });
     </script>
