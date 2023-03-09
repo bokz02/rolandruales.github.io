@@ -73,7 +73,7 @@
             </div>
         </div>
     </section>
-    <section class="my-projects ps-5 pe-5" id="projects">
+    <section class="my-projects" id="projects">
         <h3>My Projects</h3>
 
         <div id="carouselExampleCaptions" class="carousel slide">
@@ -87,7 +87,7 @@
                 <a href=""><div class="fill" style="background-image:url('https://drive.google.com/uc?export=view&amp;id=1NbsTPMDITBq3c-T_B_0SJI1sZIeQ0Nt2');"></div></a>
                 <div class="carousel-caption">
                   <h5>Mini survey form</h5>
-                  <p>built using HTML and CSS</p>
+                  <p>Built using HTML and CSS</p>
                 </div>
               </div>
               <div class="carousel-item active">
@@ -156,10 +156,10 @@
 
     <script>
 
-        var views = document.getElementsByTagName("section");
-            for(var i = 0; i < views.length; i++) {
-            views[i].style.visibility = "hidden";
-            }
+        // var views = document.getElementsByTagName("section");
+        //     for(var i = 0; i < views.length; i++) {
+        //     views[i].style.visibility = "hidden";
+        //     }
 
         function hideNav(){
             document.getElementById("nav-bar").style.top = "-100px";
@@ -181,20 +181,20 @@
             }
 
         
-            var timeleft = 3;
-            var downloadTimer = setInterval(function(){
-            if(timeleft <= 0){
-                clearInterval(downloadTimer);
-                document.getElementById("loader-div").style.visibility = "hidden";
-                var views = document.getElementsByTagName("section");
-                for(var i = 0; i < views.length; i++) {
-                views[i].style.visibility = "visible";
-                }
-            } else {
-                document.getElementById("loader-div").style.visibility = "visible"; 
-            }
-            timeleft -= 1;
-            }, 1000);
+            // var timeleft = 3;
+            // var downloadTimer = setInterval(function(){
+            // if(timeleft <= 0){
+            //     clearInterval(downloadTimer);
+            //     document.getElementById("loader-div").style.visibility = "hidden";
+            //     var views = document.getElementsByTagName("section");
+            //     for(var i = 0; i < views.length; i++) {
+            //     views[i].style.visibility = "visible";
+            //     }
+            // } else {
+            //     document.getElementById("loader-div").style.visibility = "visible"; 
+            // }
+            // timeleft -= 1;
+            // }, 1000);
         
         });
     </script>

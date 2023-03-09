@@ -231,6 +231,7 @@ body, h2, .header-div, ul, h1 {
 .my-projects {
     height: 100vh;
     width: 100%;
+    padding: 0 10%;
     background-color: whitesmoke;
 }
 
@@ -608,6 +609,10 @@ body, h2, .header-div, ul, h1 {
             height: auto;
         }
 
+    .my-projects {
+        padding: 0 20px;
+    }
+
     .carousel {
         border-radius: 5px;
         width: 100%;
@@ -664,6 +669,10 @@ body, h2, .header-div, ul, h1 {
 
     .home {
         justify-content: space-evenly;
+    }
+
+    .my-projects {
+        padding: 0 30px;
     }
 
     .my-contacts h3 {
