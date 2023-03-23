@@ -727,10 +727,6 @@ body, h2, .header-div, ul, h1 {
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 
-    * {
-        border: 1px dotted red;
-    }
-
     .home {
         justify-content: space-evenly;
     }
