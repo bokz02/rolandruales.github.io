@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <title>Roland Ruales</title>
@@ -13,15 +14,19 @@
         <div class="header-div" id="nav-bar">
             <div class="logo-div">
                 <h1>RR</h1>
-            </div>
-            <nav>
+            </div>           
+            <nav id="nav">
                 <ul>
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#about-me">ABOUT</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#home" id="nav-a" onclick="hideOnClick()">HOME</a></li>
+                    <li><a href="#about-me" id="nav-a" onclick="hideOnClick()">ABOUT</a></li>
+                    <li><a href="#projects" id="nav-a" onclick="hideOnClick()">PROJECTS</a></li>
+                    <li><a href="#contact" id="nav-a" onclick="hideOnClick()">CONTACT</a></li>
+                    
                 </ul>
             </nav>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+              </a>
         </div>
         <div class="name">
             <h2>Hey I'm Roland</h2>
@@ -156,32 +161,69 @@
 
     <script>
 
+        var navBar = document.getElementById("nav-bar");
+        var x = document.getElementById("nav");
+        var navA = document.getElementById("nav-a");
+        var prevScrollpos = window.pageYOffset;
+        var timeleft = 3;
+
         var views = document.getElementsByTagName("section");
             for(var i = 0; i < views.length; i++) {
             views[i].style.visibility = "hidden";
             }
 
+        // hide nav bar
         function hideNav(){
             document.getElementById("nav-bar").style.top = "-100px";
         }
 
+        // hide loader
         document.getElementById("loader-div").style.visibility = "hidden";
-        window.addEventListener("load", function(){
-            var prevScrollpos = window.pageYOffset;
-            window.onscroll = function() {
 
-        
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("nav-bar").style.top ="0"
+        // hamburger menu
+        function myFunction() {
+
+            if (x.style.display === "block") {
+                x.style.display = "none";
             } else {
-                document.getElementById("nav-bar").style.top = "-100px";
+                x.style.display = "block";
             }
-            prevScrollpos = currentScrollPos;
             }
 
-        
-            var timeleft = 3;
+        function hideOnClick() {
+            if(window.screen.width <= 480){
+                x.style.display = "none";
+            }
+        }
+
+        function checkWidth() {
+            if(window.screen.width > 480){
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        window.addEventListener("load", function(){
+            
+
+            //hide and show nav bar when scrolling
+            window.onscroll = function() {
+                    if(window.screen.width > 480){
+                        var currentScrollPos = window.pageYOffset;
+                        if (prevScrollpos > currentScrollPos) {
+                            document.getElementById("nav-bar").style.top ="0"
+                        } else {
+                            document.getElementById("nav-bar").style.top = "-100px";
+                        }
+                        prevScrollpos = currentScrollPos;
+                    } else {
+                        document.getElementById("nav-bar").style.top ="0"
+                    }
+                }
+
+            // show loader and hide it after 3 seconds
+            
             var downloadTimer = setInterval(function(){
             if(timeleft <= 0){
                 clearInterval(downloadTimer);
@@ -195,8 +237,10 @@
             }
             timeleft -= 1;
             }, 1000);
-        
+    
         });
+
+        window.addEventListener("resize", checkWidth)
     </script>
 
     <!-- bootstrap -->
